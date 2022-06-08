@@ -8,36 +8,6 @@ FROM
 	PortfolioProject.dbo.NashvilleHousing
 
 --------------------------------------------------------------------------------------------------------------------------
-
--- Standardize Date Format
-
-
-SELECT 
-	saleDateConverted, CONVERT(Date,SaleDate)
-FROM 
-	PortfolioProject.dbo.NashvilleHousing
-
-
-UPDATE 
-	NashvilleHousing
-SET 
-	SaleDate = CONVERT(Date,SaleDate)
-
--- If it doesn't Update properly
-
-ALTER TABLE 
-	NashvilleHousing
-ADD 
-	SaleDateConverted Date;
-
-UPDATE 
-	NashvilleHousing
-SET 
-	SaleDateConverted = CONVERT(Date,SaleDate)
-
-
- --------------------------------------------------------------------------------------------------------------------------
-
 -- Populate Property Address data
 
 SELECT *
